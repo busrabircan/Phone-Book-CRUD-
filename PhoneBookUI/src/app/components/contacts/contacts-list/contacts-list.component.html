@@ -1,0 +1,31 @@
+
+<div class="container my-5">
+  <i class="bi bi-search"></i>
+
+    <h1 class="mb-3">Contacts</h1>
+    <div class="square">
+    <table class="table" *ngIf="contacts && contacts.length>0">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>Birth Date</th>
+                <th>From Where?</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let contact of contacts " >
+                <td>{{contact.firstName +" "+contact.lastName}}</td>
+                <td>{{contact.phone}}</td>
+                <td>{{contact.email}}</td>
+                <td>{{contact.birthDate}}</td>
+                <td>{{contact.place}}</td>
+                <button [routerLink]="['/contacts', 'edit', contact.id]" type="button" class="btn-outline-warning " style="border-radius:8cm">Edit&Delete</button>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    <p *ngIf="!contacts || contacts.length<=0">No contacts found!</p>
+</div>

@@ -1,0 +1,41 @@
+<div class="container my-5"> 
+    <h1 class="mb-3">Add New Contact</h1>
+    <div class="row">
+      <div class="col-5">
+        <form #form="ngForm" (ngSubmit)="addContact()">
+          <div class="mb-3">
+            <label for="firstName" class="form-label" >First Name</label>
+            <input type="text" pattern="[a-z]"class="form-control" style="border-radius:8cm;" id="firstName" 
+            name = "firstName" [(ngModel)] = "addContactRequest.firstName"  >
+          </div>
+          <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" pattern="[a-z]" class="form-control" style="border-radius:8cm;" id="lastName"
+            name="lastName" [(ngModel)] ="addContactRequest.lastName" >
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="number" pattern="[0-9]"class="form-control" style="border-radius:8cm; " id="phone" placeholder="e.g. :5555555555"
+            name="phone" [(ngModel)] ="addContactRequest.phone">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" style="border-radius:8cm;" id="email" placeholder="e.g :someone@gmail.com"
+            name="email" [(ngModel)] ="addContactRequest.email">
+          </div>
+          <div class="mb-3">
+            <label for="birthDate" class="form-label">Birth Date</label>
+            <input type="date" class="form-control" style="border-radius:8cm;" id="birthDate" 
+            name="birthDate" [(ngModel)] ="addContactRequest.birthDate">
+          </div>
+          <div class="mb-3">
+            <label for="place" class="form-label">From Where?</label>
+            <input type="text" class="form-control" style="border-radius:8cm;" id="place" placeholder="e.g. : X Company"
+            name="place" [(ngModel)] ="addContactRequest.place">
+          </div> 
+          <button onclick ="alert('The contact saved!')"type="submit" class="btn btn-outline-success" style="border-radius:8cm;" >Save</button>
+        </form>
+    </div>
+  </div>
+  
+</div>

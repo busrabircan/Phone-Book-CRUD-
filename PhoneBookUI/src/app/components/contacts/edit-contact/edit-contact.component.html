@@ -1,0 +1,48 @@
+<html>
+  <head></head>
+  <body>
+    <div class="container my-5"> 
+      <h1 class="mb-3">Edit Contact</h1>
+      <div class="row">
+        <div class="col-5">
+          <form #form="ngForm" (ngSubmit)="updateContact()">
+            <div class="mb-3">
+              <label for="firstName" class="form-label" >First Name</label>
+              <input type="text" class="form-control" style="border-radius:8cm;" id="firstName" 
+              name = "firstName" [(ngModel)] = "contactDetails.firstName"  >
+            </div>
+            <div class="mb-3">
+              <label for="lastName" class="form-label">Last Name</label>
+              <input type="text" class="form-control" style="border-radius:8cm;" id="lastName"
+              name="lastName" [(ngModel)] ="contactDetails.lastName" >
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="number" class="form-control" style="border-radius:8cm; " id="phone"
+              name="phone" [(ngModel)] ="contactDetails.phone">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" style="border-radius:8cm;" id="email" 
+              name="email" [(ngModel)] ="contactDetails.email">
+            </div>
+            <div class="mb-3">
+              <label for="birthDate" class="form-label">Birth Date</label>
+              <input type="date" class="form-control" style="border-radius:8cm;" id="birthDate" 
+              name="birthDate" [(ngModel)] ="contactDetails.birthDate">
+            </div>
+            <div class="mb-3">
+              <label for="place" class="form-label">From Where?</label>
+              <input type="text" class="form-control" style="border-radius:8cm;" id="place" 
+              name="place" [(ngModel)] ="contactDetails.place">
+            </div> 
+            <button  onclick ="alert('The contact edited!')" type="submit" class="btn btn-outline-success" style="border-radius:8cm;" >Edit&Save</button>
+            <button  onclick="checker()"type="button" class="btn btn-outline-danger" style="border-radius:8cm;" (click)="deleteContact(contactDetails.id);" >Delete</button>
+          </form>
+      </div>
+    </div>
+  </div>
+
+  
+  </body>
+</html>
